@@ -1,0 +1,52 @@
+h1{
+    text-align:center;
+    color: black;
+    font-family: Cursive;
+    font-size: 50px;
+}
+
+.draggableContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px
+    
+}
+
+.box{
+    display: flex;
+    background-color: lavender;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    width: 150px;
+    cursor:grab;
+}
+.droppableContainer{
+    border:1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: lavender ;
+}
+
+.droppable{
+    display: flex;
+    background-color: lavender ;
+    align-items: center;
+    justify-content: space-around;
+    height:160px;
+    width: 200px;
+}
+
+.draggableFormat{
+    font-weight:bold;
+    color: #7a00ff;
+    border: 5px dotted black;
+}
+
+img{
+    height: 135px; 
+    width: 135px;
+    border-radius: 50%;
+}

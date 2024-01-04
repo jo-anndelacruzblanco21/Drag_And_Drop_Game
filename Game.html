@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.5">
+   <title>Drag and Drop Demo</title>
+    <link rel="stylesheet" href="indexStyle.css">
+    <script src="indexScript.js" defer></script>
+</head>
+
+<body>
+<header><h1>Arrange the Planets</h1></header>
+
+    <div class="draggableContainer">
+                    <div class="draggableContainer">
+    <div class="box" draggable="true" id="drag2">
+        <img src="Mercury.jpg" alt="Mercury Image">
+    </div>
+   
+    <div class="box" draggable="true" id="drag4">
+        <img src="Earth.jpg" alt="Earth Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag8">
+        <img src="Uranus.jpg" alt="Uranus Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag9">
+        <img src="Neptune.jpg" alt="Neptune Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag3">
+        <img src="Venus.jpg" alt="Venus Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag5">
+        <img src="Mars.jpg" alt="Mars Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag10">
+        <img src="Pluto.jpg" alt="Pluto Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag7">
+        <img src="Saturn.jpg" alt="Saturn Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag6">
+        <img src="Jupiter.jpg" alt="Jupiter Image">
+    </div>
+    
+    <div class="box" draggable="true" id="drag1">
+        <img src="Sun.jpg" alt="Sun Image">
+    </div>
+</div>
+</div>
+<br> 
+    <div class="droppableContainer">
+    <div class="droppable" id="drop1" data-draggable-id="drop1">Sun</div>
+    <div class="droppable" id="drop2" data-draggable-id="drop2">Mercury</div>
+    <div class="droppable" id="drop3" data-draggable-id="drop3">Venus</div>
+    <div class="droppable" id="drop4" data-draggable-id="drop4">Earth</div>
+    <div class="droppable" id="drop5" data-draggable-id="drop5">Mars</div>
+    <div class="droppable" id="drop6" data-draggable-id="drop6">Jupiter</div>
+    <div class="droppable" id="drop7" data-draggable-id="drop7">Saturn</div>
+    <div class="droppable" id="drop8" data-draggable-id="drop8">Uranus</div>
+    <div class="droppable" id="drop9" data-draggable-id="drop9">Neptune</div>
+    <div class="droppable" id="drop10" data-draggable-id="drop10">Pluto</div>
+    
+</div>
+                <br><div id="remarksDiv"></div><br>
+                <div id ="scoreSection">Score:0</div><br>
+</body>
+</html>
