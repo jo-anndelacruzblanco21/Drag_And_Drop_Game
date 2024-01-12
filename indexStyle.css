@@ -15,7 +15,7 @@ h1{
 
 .box{
     display: flex;
-    background-color: lavender;
+    background-color: white;
     align-items: center;
     justify-content: space-around;
     height: 150px;
@@ -27,7 +27,7 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: lavender ;
+    background-color: white ;
 }
 
 .droppable{
@@ -36,7 +36,8 @@ h1{
     align-items: center;
     justify-content: space-around;
     height:160px;
-    width: 200px;
+    width: 250px;
+    border: 1px solid black;
 }
 
 .draggableFormat{
