@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +6,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arrange the Planets</title>
 
-    <link rel="stylesheet" href="indexStyle.css">
-    <script src="indexScript.js" defer></script>
+    <style>
+
+        body{
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                to bottom,
+                #cbd5ff,
+                #f3e8ff
+            );
+
+            min-height: 100vh;
+        }
+
+        /* TITLE */
+        h1{
+            text-align: center;
+            color: black;
+
+            font-family: cursive;
+
+            font-size: 50px;
+
+            margin-bottom: 40px;
+        }
+
+        /* DRAG CONTAINER */
+        .draggableContainer{
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-bottom: 50px;
+        }
+
+        /* PLANET BOX */
+        .box{
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 160px;
+
+            height: 160px;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+
+            cursor: grab;
+
+            transition: 0.3s;
+        }
+
+        .box:hover{
+            transform: scale(1.05);
+        }
+
+        /* DROP CONTAINER */
+        .droppableContainer{
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            padding: 20px;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            border: 2px solid black;
+        }
+
+        /* DROP BOXES */
+        .droppable{
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 220px;
+
+            height: 170px;
+
+            background-color: lavender;
+
+            border: 2px dashed black;
+
+            border-radius: 20px;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        /* DRAGGING STYLE */
+        .draggableFormat{
+            opacity: 0.6;
+
+            border: 5px dotted black;
+        }
+
+        /* IMAGES */
+        img{
+            width: 135px;
+
+            height: 135px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+        }
+
+        /* DROPPED IMAGE STYLE */
+        .droppable .box{
+            width: 100%;
+
+            height: 100%;
+
+            background: transparent;
+
+            box-shadow: none;
+        }
+
+        /* REMARKS */
+        #remarksDiv{
+            text-align: center;
+
+            font-size: 35px;
+
+            font-weight: bold;
+
+            margin-top: 30px;
+        }
+
+        /* SCORE */
+        #scoreSection{
+            text-align: center;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+
+            h1{
+                font-size: 35px;
+            }
+
+            .box{
+                width: 120px;
+                height: 120px;
+            }
+
+            img{
+                width: 100px;
+                height: 100px;
+            }
+
+            .droppable{
+                width: 150px;
+                height: 140px;
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
     <header>
-        <h1>🌍 Arrange the Planets 🌍</h1>
+        <h1>Arrange the Planets</h1>
     </header>
 
     <!-- DRAGGABLE PLANETS -->
@@ -63,56 +251,184 @@
     </div>
 
     <!-- DROP AREAS -->
-<div class="droppableContainer">
+    <div class="droppableContainer">
 
-    <div class="droppable" data-answer="drag1">
-        Sun
+        <div class="droppable" data-answer="drag1">
+            Sun
+        </div>
+
+        <div class="droppable" data-answer="drag2">
+            Mercury
+        </div>
+
+        <div class="droppable" data-answer="drag3">
+            Venus
+        </div>
+
+        <div class="droppable" data-answer="drag4">
+            Earth
+        </div>
+
+        <div class="droppable" data-answer="drag5">
+            Mars
+        </div>
+
+        <div class="droppable" data-answer="drag6">
+            Jupiter
+        </div>
+
+        <div class="droppable" data-answer="drag7">
+            Saturn
+        </div>
+
+        <div class="droppable" data-answer="drag8">
+            Uranus
+        </div>
+
+        <div class="droppable" data-answer="drag9">
+            Neptune
+        </div>
+
+        <div class="droppable" data-answer="drag10">
+            Pluto
+        </div>
+
     </div>
 
-    <div class="droppable" data-answer="drag2">
-        Mercury
-    </div>
-
-    <div class="droppable" data-answer="drag3">
-        Venus
-    </div>
-
-    <div class="droppable" data-answer="drag4">
-        Earth
-    </div>
-
-    <div class="droppable" data-answer="drag5">
-        Mars
-    </div>
-
-    <div class="droppable" data-answer="drag6">
-        Jupiter
-    </div>
-
-    <div class="droppable" data-answer="drag7">
-        Saturn
-    </div>
-
-    <div class="droppable" data-answer="drag8">
-        Uranus
-    </div>
-
-    <div class="droppable" data-answer="drag9">
-        Neptune
-    </div>
-
-    <div class="droppable" data-answer="drag10">
-        Pluto
-    </div>
-
-</div>
-
-    <!-- SCORE -->
+    <!-- REMARKS -->
     <div id="remarksDiv"></div>
 
+    <!-- SCORE -->
     <div id="scoreSection">
         Score: 0
     </div>
+
+    <script>
+
+        const draggableElement =
+            document.querySelectorAll('.box');
+
+        const droppableElement =
+            document.querySelectorAll('.droppable');
+
+        const remarksDiv =
+            document.getElementById('remarksDiv');
+
+        const scoreSection =
+            document.getElementById('scoreSection');
+
+        let score = 0;
+
+        // DRAG EVENTS
+        draggableElement.forEach(element => {
+
+            element.addEventListener(
+                'dragstart',
+                (drgStrt) => {
+
+                drgStrt.dataTransfer.setData(
+                    'text',
+                    drgStrt.currentTarget.id
+                );
+
+                drgStrt.currentTarget.classList.add(
+                    'draggableFormat'
+                );
+
+            });
+
+            element.addEventListener(
+                'dragend',
+                (drgEnd) => {
+
+                drgEnd.currentTarget.classList.remove(
+                    'draggableFormat'
+                );
+
+            });
+
+        });
+
+        // DROP EVENTS
+        droppableElement.forEach(element => {
+
+            // ALLOW DROP
+            element.addEventListener(
+                'dragover',
+                (dragOver) => {
+
+                dragOver.preventDefault();
+
+            });
+
+            // DROP
+            element.addEventListener(
+                'drop',
+                (dropEvt) => {
+
+                dropEvt.preventDefault();
+
+                const droppedElementId =
+                    dropEvt.dataTransfer.getData(
+                        'text'
+                    );
+
+                const droppedElement =
+                    document.getElementById(
+                        droppedElementId
+                    );
+
+                const correctAnswer =
+                    dropEvt.currentTarget.getAttribute(
+                        'data-answer'
+                    );
+
+                // PREVENT MULTIPLE DROPS
+                if (
+                    dropEvt.currentTarget.querySelector('.box')
+                ) {
+                    return;
+                }
+
+                // REMOVE TEXT
+                dropEvt.currentTarget.innerHTML = "";
+
+                // MOVE IMAGE
+                dropEvt.currentTarget.appendChild(
+                    droppedElement
+                );
+
+                // CHECK ANSWER
+                if (
+                    correctAnswer === droppedElementId
+                ) {
+
+                    score++;
+
+                    remarksDiv.innerText =
+                        "✅ Correct!";
+
+                    dropEvt.currentTarget.style.backgroundColor =
+                        "lightgreen";
+
+                } else {
+
+                    remarksDiv.innerText =
+                        "❌ Wrong!";
+
+                    dropEvt.currentTarget.style.backgroundColor =
+                        "#ffb3b3";
+                }
+
+                // UPDATE SCORE
+                scoreSection.innerText =
+                    `Score: ${score}`;
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>
