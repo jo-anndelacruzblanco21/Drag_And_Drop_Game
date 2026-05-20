@@ -1,5 +1,3 @@
-// indexScript.js
-
 const draggableElement = document.querySelectorAll('.box');
 
 const droppableElement = document.querySelectorAll('.droppable');
@@ -15,7 +13,7 @@ draggableElement.forEach(element => {
 
     element.addEventListener('dragstart', (drgStrt) => {
 
-        drgStrt.dataTransfer.setData('text', drgStrt.target.id);
+        drgStrt.dataTransfer.setData('text', drgStrt.currentTarget.id);
 
         drgStrt.currentTarget.classList.add('draggableFormat');
 
@@ -32,12 +30,14 @@ draggableElement.forEach(element => {
 // DROP EVENTS
 droppableElement.forEach(element => {
 
+    // ALLOW DROP
     element.addEventListener('dragover', (dragOver) => {
 
         dragOver.preventDefault();
 
     });
 
+    // DROP EVENT
     element.addEventListener('drop', (dropEvt) => {
 
         dropEvt.preventDefault();
@@ -49,14 +49,18 @@ droppableElement.forEach(element => {
             document.getElementById(droppedElementId);
 
         const dropZoneId =
-            dropEvt.currentTarget.getAttribute('data-draggable-id');
+            dropEvt.currentTarget.getAttribute('data-answer');
+
+        // PREVENT MULTIPLE DROPS
+        if (dropEvt.currentTarget.children.length > 0) {
+            return;
+        }
 
         // MOVE IMAGE
-        dropEvt.currentTarget.innerHTML = "";
         dropEvt.currentTarget.appendChild(droppedElement);
 
         // CHECK ANSWER
-        if(dropZoneId === droppedElementId.replace('drag', 'drop')){
+        if (dropZoneId === droppedElementId) {
 
             score++;
 
